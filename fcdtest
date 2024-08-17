@@ -3,53 +3,6 @@
 
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
-
-    <meta charset="utf-8" />
-    <title>Faceclaims A-C</title>
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lustria&family=Source+Sans+Pro:wght@400&display=swap" rel="stylesheet">
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-    <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
-    <script src="https://static.tumblr.com/p0knose/FpAp5c11c/magnusthemes.combofilters.js"></script>
-
-    <script>
-        $(document).ready(function () {
-            var $container = $(".grid"); // the container with all the elements to filter inside
-            var filters = {}; //should be outside the scope of the filtering function
-            /* --- read the documentation on isotope.metafizzy.co for more options --- */
-            var $grid = $container.isotope({
-                itemSelector: ".grid-item", // the elements to filter
-                percentPosition: false // put true if you use percentage widths, otherwise put false
-            });
-            $(".option-set a").click(function (e) {
-                var $this = $(this); // cache the clicked link
-                var filterAttr = "data-filter-value";
-                var filterValue = $this.attr(filterAttr); // cache the filter
-                var $optionSet = $this.parents(".option-set"); // cache the parent element
-                var group = $optionSet.attr("data-filter-group"); // cache the parent filter group
-                var filterGroup = filters[group];
-                if (!filterGroup) {
-                    filterGroup = filters[group] = [];
-                }
-                var $selectAll = $optionSet.find('a[' + filterAttr + '=""]'); // the 'select all' button in the current group
-                var activeClass = "selected", // the class for active links
-                    exclClass = "exclusive"; // the class for exclusive groups
-                comboFiltering($this, filters, filterAttr, filterValue, $optionSet, group, $selectAll, activeClass, exclClass);
-                var comboFilter = getComboFilter(filters);
-                $grid.isotope({
-                    filter: comboFilter
-                });
-                $this.toggleClass(activeClass);
-                e.preventDefault();
-            });
-        });
-    </script>
-
-    <!-- Base by hendrixrph. Feel free to use this for personal stuff and make into your own theme to distrubute, just don't remove this comment. -->
-
     <style>
 
         html, body {
